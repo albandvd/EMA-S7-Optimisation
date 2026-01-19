@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "3000:3000"
+    depends_on:
+      - compute-service
+      - counter-service
+      - account-service
+      - slow-service
+
+  compute-service:
+    build: ./services/compute-service
+    ports:
+      - "3001:3001"
+
+  counter-service:
+    build: ./services/counter-service
+    ports:
+      - "3002:3002"
+
+  account-service:
+    build: ./services/account-service
+    ports:
+      - "3003:3003"
+
+  slow-service:
+    build: ./services/slow-service
+    ports:
+      - "3004:3004"
