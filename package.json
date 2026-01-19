@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node monolith-server.ts",
     "dev": "nodemon --watch . --exec ts-node monolith-server.ts",
+    "dev:account": "nodemon --watch . --exec ts-node ./services/account-service/index.ts",
     "benchmark": "ts-node benchmark.ts -- -c 1000 -t 2000"
   },
   "dependencies": {
