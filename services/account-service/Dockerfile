@@ -10,7 +10,7 @@ RUN pnpm install
 
 # Copy source
 COPY tsconfig.json ./
-COPY src ./src
+COPY ./src ./src
 
 # Build TypeScript
 RUN pnpm run build

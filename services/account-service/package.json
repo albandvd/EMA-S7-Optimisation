@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "dev:account": "nodemon --watch . --exec ts-node ./index.ts"
+    "dev": "nodemon --watch . --exec ts-node ./index.ts",
+    "build": "tsc",
+    "start": "node ./dist/index.js" 
   },
   "dependencies": {
     "axios": "^1.6.7",
