@@ -4,15 +4,16 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Install dependencies
-COPY package.json package-lock.json* ./
-RUN npm install
+RUN corepack enable pnpm
+COPY package.json pnpm-lock.json* ./
+RUN pnpm install
 
 # Copy source
 COPY tsconfig.json ./
 COPY src ./src
 
 # Build TypeScript
-RUN npm run build
+RUN pnpm run build
 
 
 # ---------- RUNTIME STAGE ----------
